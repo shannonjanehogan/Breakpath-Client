@@ -6,7 +6,11 @@ module.exports = {
   "plugins": [
     "react",
     "jsx-a11y",
+    "react-native"
   ],
+  "ecmaFeatures": {
+    "jsx": true,
+  },
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended"
