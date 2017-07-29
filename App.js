@@ -1,13 +1,47 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { AppRegistry, StyleSheet, Text, TextInput, View } from 'react-native';
 
 export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {text: ''};
+  }
+
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
+      <View>
+        <View style={{padding: 10}}>
+          <TextInput
+            style={{height: 40}}
+            placeholder="First Name"
+          />
+          <Text style={{padding: 10, fontSize: 42}}>
+          </Text>
+        </View>
+        <View style={{padding: 10}}>
+          <TextInput
+            style={{height: 40}}
+            placeholder="Last Name"
+          />
+          <Text style={{padding: 10, fontSize: 42}}>
+          </Text>
+        </View>
+        <View style={{padding: 10}}>
+          <TextInput
+            style={{height: 40}}
+            placeholder="Email"
+          />
+          <Text style={{padding: 10, fontSize: 42}}>
+          </Text>
+        </View>
+        <View style={{padding: 10}}>
+          <TextInput
+            style={{height: 40}}
+            placeholder="Passoword"
+          />
+          <Text style={{padding: 10, fontSize: 42}}>
+          </Text>
+        </View>
       </View>
     );
   }
