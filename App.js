@@ -2,6 +2,7 @@ import React from 'react';
 import { Alert, AppRegistry, Button, StyleSheet, Text, TextInput, View } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import Picker from 'react-native-picker';
+import { Dropdown } from 'react-native-material-dropdown';
 
 // export default class LogIn extends React.Component {
 //   // static navigationOptions = {
@@ -103,6 +104,20 @@ export default class DebateSignUp extends React.Component {
   }
 
   render() {
+    let pref = [{
+      value: 'Debate',
+    }, {
+      value: 'Judge',
+    }, {
+      value: 'Indifferent',
+    }];
+    let skill = [{
+      value: 'Novice',
+    }, {
+      value: 'Pro',
+    }, {
+      value: 'Worlds',
+    }];
     return (
       <View>
         <View style={{padding: 10}}>
@@ -129,6 +144,14 @@ export default class DebateSignUp extends React.Component {
           <Text style={{padding: 10, fontSize: 42}}>
           </Text>
         </View>
+        <Dropdown
+          label='Debate Preference'
+          data={pref}
+        />
+        <Dropdown
+          label='Skill Level'
+          data={skill}
+        />
         <Button
           onPress={() => { Alert.alert('Account Created!')}}
           title="SIGN UP TO DEBATE"
