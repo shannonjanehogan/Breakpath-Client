@@ -4,9 +4,11 @@ import { StackNavigator } from 'react-navigation';
 import { Dropdown } from 'react-native-material-dropdown';
 
 export default class LogIn extends React.Component {
-  // static navigationOptions = {
-  //   title: 'Sign Up',
-  // };
+  static navigationOptions = {
+    drawer: () => ({
+      title: 'Log In',
+    }),
+  };
 
   render() {
     return (

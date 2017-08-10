@@ -4,13 +4,12 @@ import { StackNavigator } from 'react-navigation';
 import { Dropdown } from 'react-native-material-dropdown';
 
 export default class DebateSignUp extends React.Component {
-  // static navigationOptions = {
-  //   title: 'Sign Up',
-  // };
-  constructor(props) {
-    super(props);
-    this.state = {text: ''};
-  }
+  static navigationOptions = {
+    drawer: () => ({
+      title: 'Debate Sign Up',
+    }),
+  };
+
 
   render() {
     let pref = [{
@@ -29,7 +28,7 @@ export default class DebateSignUp extends React.Component {
     }];
     return (
       <View>
-        <View style={{ padding: 10 }>
+        <View style={{ padding: 10 }}>
           <TextInput
             style={{ height: 40 }}
             placeholder="First Name"
@@ -45,7 +44,7 @@ export default class DebateSignUp extends React.Component {
           <Text style={{ padding: 10, fontSize: 42 }}>
           </Text>
         </View>
-        <View style={{ padding: 10 }>
+        <View style={{ padding: 10 }}>
           <TextInput
             style={{ height: 40 }}
             placeholder="Partner Preference"
