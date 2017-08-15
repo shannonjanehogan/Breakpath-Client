@@ -1,6 +1,6 @@
 import React from 'react';
 import { Alert, AppRegistry, Button, StyleSheet, Text, TextInput, View } from 'react-native';
-import { StackNavigator } from 'react-navigation';
+import { DrawerNavigator } from 'react-navigation';
 import { Dropdown } from 'react-native-material-dropdown';
 
 export default class LogIn extends React.Component {
