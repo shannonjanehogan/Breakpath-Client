@@ -1,17 +1,19 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Route, Switch } from 'react-router';
+import { Alert, AppRegistry, Button, StyleSheet, Text, TextInput, View } from 'react-native';
+import { DrawerNavigator } from 'react-navigation';
+import { Dropdown } from 'react-native-material-dropdown';
+import SignUp from './Components/SignUp.js';
+import LogIn from './Components/LogIn.js'
+import DebateSignUp from './Components/DebateSignUp.js'
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-      </View>
-    );
-  }
-}
+const App = DrawerNavigator({
+  SignUp: { screen: SignUp },
+  LogIn: { screen: LogIn },
+  DebateSignUp: { screen: DebateSignUp }
+});
+
+// AppRegistry.registerComponent('App', () => App);
 
 const styles = StyleSheet.create({
   container: {
@@ -21,3 +23,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+export default App;
