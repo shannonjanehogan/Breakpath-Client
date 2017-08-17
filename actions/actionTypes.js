@@ -1,0 +1,19 @@
+// Session actions
+export const LOG_IN_SUCCESS = 'LOG_IN_SUCCESS';
+export const LOG_IN_REQUEST = 'LOG_IN_REQUEST';
+export const LOG_IN_ERROR = 'LOG_IN_ERROR';
+export const LOG_OUT_SUCCESS = 'LOG_OUT_SUCCESS';
+
+export const SIGN_UP_SUCCESS = 'SIGN_UP_SUCCESS';
+export const SIGN_UP_REQUEST = 'SIGN_UP_REQUEST';
+export const SIGN_UP_ERROR = 'SIGN_UP_ERROR';
+
+// Signup to debate actions
+export const DEBATE_SIGN_UP_SUCCESS = 'DEBATE_SIGN_UP_SUCCESS';
+export const DEBATE_SIGN_UP_REQUEST = 'DEBATE_SIGN_UP_REQUEST';
+export const DEBATE_SIGN_UP_ERROR = 'DEBATE_SIGN_UP_ERROR';
+
+// Sorted Rooms actions
+export const FETCH_SORTED_ROOMS_REQUEST = 'FETCH_SORTED_ROOMS_REQUEST';
+export const SORTED_ROOMS_ERROR = 'SORTED_ROOMS_ERROR';
+export const FETCH_SORTED_ROOMS_SUCCESS = 'FETCH_SORTED_ROOMS_SUCCESS';
