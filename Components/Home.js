@@ -3,6 +3,7 @@ import { Alert, AppRegistry, Button, StyleSheet, Text, TextInput, View } from 'r
 import { DrawerNavigator } from 'react-navigation';
 import { Dropdown } from 'react-native-material-dropdown';
 import { Header } from 'react-native-elements';
+import NavigationBar from 'react-native-navbar';
 
 export default class HomeScreen extends React.Component {
   constructor(props) {
@@ -20,13 +21,29 @@ export default class HomeScreen extends React.Component {
 
   render() {
     const { navigate } = this.props.navigation;
+
+    const leftButtonConfig = {
+      title: 'Sign Up',
+      handler: () => alert('hello!'),
+    };
+
+    const rightButtonConfig = {
+      title: 'Log In',
+      handler: () => alert('hello!'),
+    };
+
+    const titleConfig = {
+      title: 'BreakPath',
+    };
     return (
       <View>
-        {/* <Header
-          leftComponent={{ icon: 'menu', color: '#fff' }}
-          centerComponent={{ text: 'MY TITLE', style: { color: '#fff' } }}
-          rightComponent={{ icon: 'home', color: '#fff' }}
-        /> */} FIND WHERE THIS GOES
+        <View style={styles.titleText}>
+          <NavigationBar
+            leftButton={leftButtonConfig}
+            title={titleConfig}
+            rightButton={rightButtonConfig}
+          />
+        </View>
         <Text style={styles.baseText}>
           <Text style={styles.titleText} onPress={this.onPressTitle}>
             {this.state.titleText}{'\n'}{'\n'}
