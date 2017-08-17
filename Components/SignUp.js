@@ -27,17 +27,17 @@ export default class SignUp extends React.Component {
     return fetch('https://breakpath-api.herokuapp.com/signup', {
       method: 'POST',
       mode: 'no-cors',
-      body: {
+      body: JSON.stringify({
         email: this.state.email,
         password: this.state.password,
         username: this.state.username,
         first_name: this.state.first_name,
         last_name: this.state.last_name,
-      },
+      }),
     })
     .then((response) => response.json())
     .then((responseJson) => {
-      return responseJson.movies;
+      return responseJson;
     })
     .catch((error) => {
       console.error(error);
