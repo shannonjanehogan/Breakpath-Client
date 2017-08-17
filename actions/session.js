@@ -1,4 +1,3 @@
-import { push } from 'react-router-redux';
 import * as types from './actionTypes';
 import SessionApi from '../api/session';
 import { logIn } from '../services/auth';
@@ -41,7 +40,6 @@ export function login(credentials) {
       .then((response) => {
         if (response.token) {
           logIn(response.token);
-          dispatch(push('/debates/new'));
           dispatch(loginError(''));
           dispatch(loginSuccess());
         } else {
@@ -63,7 +61,6 @@ export function signup(formData) {
       .then((response) => {
         if (response.token) {
           signup(response.token);
-          dispatch(push('/debates/new'));
           dispatch(signupError(''));
           dispatch(signupSuccess());
         } else {

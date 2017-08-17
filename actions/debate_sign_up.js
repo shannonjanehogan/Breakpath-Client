@@ -1,4 +1,3 @@
-import { push } from 'react-router-redux';
 import * as types from './actionTypes';
 import DebateSignUpApi from '../api/debate_sign_up';
 
@@ -22,7 +21,6 @@ export function debateSignup(formData) {
       .then(response => response.json())
       .then((response) => {
         if (response.status === 200) {
-          dispatch(push('/sorted_rooms'));
           dispatch(debateSignupError(''));
           dispatch(debateSignupSuccess());
         } else {

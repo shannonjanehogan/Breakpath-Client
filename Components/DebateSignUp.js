@@ -2,16 +2,19 @@ import React from 'react';
 import { Alert, AppRegistry, Button, StyleSheet, Text, TextInput, View } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import { Dropdown } from 'react-native-material-dropdown';
+import PropTypes from 'prop-types';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as debateSignUpActions from '../actions/debate_sign_up';
 
-export default class DebateSignUp extends React.Component {
+class DebateSignUp extends React.Component {
   static navigationOptions = {
     drawer: () => ({
       title: 'Debate Sign Up',
     }),
   };
 
-
-  render() {
+  render() {  // TODO make these simple arrays
     let pref = [{
       value: 'Debate',
     }, {
@@ -68,3 +71,24 @@ export default class DebateSignUp extends React.Component {
     );
   }
 }
+
+DebateSignUp.propTypes = {
+  actions: PropTypes.shape({
+    debateSignup: PropTypes.func.isRequired,
+  }).isRequired,
+  errorMessage: PropTypes.string.isRequired,
+};
+
+function mapStateToProps(state) {
+  return {
+    errorMessage: state.debate_sign_up.errorMessage,
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(debateSignUpActions, dispatch),
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(DebateSignUp);

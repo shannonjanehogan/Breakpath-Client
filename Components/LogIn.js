@@ -2,8 +2,12 @@ import React from 'react';
 import { Alert, AppRegistry, Button, StyleSheet, Text, TextInput, View } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import { Dropdown } from 'react-native-material-dropdown';
+import PropTypes from 'prop-types';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as sessionActions from '../actions/session';
 
-export default class LogIn extends React.Component {
+class LogIn extends React.Component {
   static navigationOptions = {
     drawer: () => ({
       title: 'Log In',
@@ -37,3 +41,24 @@ export default class LogIn extends React.Component {
     );
   }
 }
+
+LogIn.propTypes = {
+  actions: PropTypes.shape({
+    login: PropTypes.func.isRequired,
+  }).isRequired,
+  errorMessage: PropTypes.string.isRequired,
+};
+
+function mapStateToProps(state) {
+  return {
+    errorMessage: state.session.errorMessage,
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(sessionActions, dispatch),
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LogIn);

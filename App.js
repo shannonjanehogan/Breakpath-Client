@@ -13,6 +13,35 @@ const App = DrawerNavigator({
   DebateSignUp: { screen: DebateSignUp }
 });
 
+// default app on create react native app
+// export default class App extends React.Component {
+//   render() {
+//     return (
+//       <View style={styles.container}>
+//         <Text>BLAH</Text>
+//       </View>
+//     );
+//   }
+// }
+
+// how to set up redux from https://shellmonger.com/2017/05/22/adding-redux-to-the-react-native-tasklist-app/
+// import React, { Component } from 'react';
+// import { Provider } from 'react-redux';
+// import store from './redux/store';
+// import TaskListApp from './TaskListApp';
+//
+// class Application extends Component {
+//   render() {
+//     return (
+//       <Provider store={store}>
+//         <TaskListApp />
+//       </Provider>
+//     );
+//   }
+// }
+//
+// export default Application;
+
 // AppRegistry.registerComponent('App', () => App);
 
 const styles = StyleSheet.create({
