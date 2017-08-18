@@ -2,6 +2,7 @@ import React from 'react';
 import { AppRegistry, Button, StyleSheet, Text, TextInput, View } from 'react-native';
 import { DrawerNavigator } from 'react-navigation';
 import { Dropdown } from 'react-native-material-dropdown';
+import NavigationBar from 'react-native-navbar';
 
 export default class SignUp extends React.Component {
   constructor(props){
@@ -16,11 +17,6 @@ export default class SignUp extends React.Component {
     };
     this.handleSignUpClick = this.handleSignUpClick.bind(this);
   }
-  static navigationOptions = {
-    drawer: () => ({
-      title: 'Sign Up',
-    }),
-  };
 
   handleSignUpClick(event) {
     event.preventDefault();
@@ -51,8 +47,26 @@ export default class SignUp extends React.Component {
       { value: 'Pro' },
       { value: 'Worlds' }
     ];
+    const leftButtonConfig = {
+      title: 'Sign Up',
+      handler: () => navigate('Sign Up'),
+    };
+    const rightButtonConfig = {
+      title: 'Log In',
+      handler: () => navigate('Log In'),
+    };
+    const titleConfig = {
+      title: 'BreakPath',
+    };
     return (
       <View>
+        <View style={styles.header}>
+          <NavigationBar
+            leftButton={leftButtonConfig}
+            title={titleConfig}
+            rightButton={rightButtonConfig}
+          />
+        </View>
         <View style={{ padding: 10 }}>
           <TextInput
             style={{ height: 40 }}
@@ -111,3 +125,10 @@ export default class SignUp extends React.Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  header: {
+    marginTop: 20,
+    marginBottom: 20,
+  },
+});
