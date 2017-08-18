@@ -14,6 +14,7 @@ export default class LogIn extends React.Component {
   }
 
   handleLoginClick(event) {
+    const { navigate } = this.props.navigation;
     event.preventDefault();
     return fetch('https://breakpath-api.herokuapp.com/login', {
       method: 'POST',
@@ -26,7 +27,7 @@ export default class LogIn extends React.Component {
     .then((response) => response.json())
     .then((responseJson) => {
       return responseJson;
-      push(DebateSignUp);
+      navigate('Debate Sign Up');
     })
     .catch((error) => {
       console.error(error);
