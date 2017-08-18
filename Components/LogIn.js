@@ -26,7 +26,7 @@ export default class LogIn extends React.Component {
     .then((response) => response.json())
     .then((responseJson) => {
       return responseJson;
-      // TODO redirect to debate sign up
+      navigate('Sign up to Debate');
     })
     .catch((error) => {
       console.error(error);
@@ -34,6 +34,7 @@ export default class LogIn extends React.Component {
   }
 
   render() {
+    const { navigate } = this.props.navigation;
     const leftButtonConfig = {
       title: 'Sign Up',
       handler: () => navigate('Sign Up'),

@@ -21,7 +21,6 @@ export default class HomeScreen extends React.Component {
 
   render() {
     const { navigate } = this.props.navigation;
-
     const leftButtonConfig = {
       title: 'Sign Up',
       handler: () => navigate('Sign Up'),

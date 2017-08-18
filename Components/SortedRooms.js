@@ -47,6 +47,75 @@ export default class IndexSortedRooms extends React.Component {
         <Card>
           <Card.Body>
             <Text>
+              BUCH B302
+            </Text>
+            <Text>
+              ProAm
+            </Text>
+          </Card.Body>
+        </Card>
+        <Card>
+          <Card.Body>
+            <Text>
+              Judges
+            </Text>
+            <Text>
+              Pro, Dumbledore
+            </Text>
+            <Text>
+              Nov, Ron
+            </Text>
+          </Card.Body>
+        </Card>
+        <Card>
+          <Card.Body>
+            <Text>
+              OG
+            </Text>
+            <Text>
+              Pro, Rob
+            </Text>
+            <Text>
+              Nov, Lupin
+            </Text>
+          </Card.Body>
+        </Card>
+        <Card>
+          <Card.Body>
+            <Text>
+              OO
+            </Text>
+            <Text>
+              Nov, Snape
+            </Text>
+            <Text>
+              Pro, Harry
+            </Text>
+          </Card.Body>
+        </Card>
+        <Card>
+          <Card.Body>
+            <Text>
+              CG
+            </Text>
+            <Text>
+              Nov, Fred
+            </Text>
+            <Text>
+              Pro, George
+            </Text>
+          </Card.Body>
+        </Card>
+        <Card>
+          <Card.Body>
+            <Text>
+              CO
+            </Text>
+            <Text>
+              Nov, Hermoine
+            </Text>
+            <Text>
+             Pro, Lily
             </Text>
           </Card.Body>
         </Card>

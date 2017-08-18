@@ -42,6 +42,7 @@ export default class SignUp extends React.Component {
   }
 
   render() {
+    const { navigate } = this.props.navigation;
     const skill = [
       { value: 'Novice' },
       { value: 'Pro' },
