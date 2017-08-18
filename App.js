@@ -4,13 +4,18 @@ import { Alert, AppRegistry, Button, StyleSheet, Text, TextInput, View } from 'r
 import { DrawerNavigator } from 'react-navigation';
 import { Dropdown } from 'react-native-material-dropdown';
 import SignUp from './Components/SignUp.js';
-import LogIn from './Components/LogIn.js'
-import DebateSignUp from './Components/DebateSignUp.js'
+import LogIn from './Components/LogIn.js';
+import DebateSignUp from './Components/DebateSignUp.js';
+import Home from './Components/Home.js';
+import SortedRooms from './Components/SortedRooms.js';
+import { Header } from 'react-native-elements';
 
 const App = DrawerNavigator({
-  SignUp: { screen: SignUp },
-  LogIn: { screen: LogIn },
-  DebateSignUp: { screen: DebateSignUp }
+  Home: { screen: Home },
+  'Sign Up': { screen: SignUp },
+  'Log In': { screen: LogIn },
+  'Sign up to Debate': { screen: DebateSignUp },
+  'Sorted Rooms': { screen: SortedRooms },
 });
 
 // AppRegistry.registerComponent('App', () => App);
