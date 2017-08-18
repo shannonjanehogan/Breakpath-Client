@@ -24,6 +24,7 @@ export default class DebateSignUp extends React.Component {
   };
 
   handleDebateSignUpClick(event) {
+    const { navigate } = this.props.navigation;
     event.preventDefault();
     return fetch('https://breakpath-api.herokuapp.com/sign_up_preferences', {
       method: 'POST',
@@ -39,7 +40,7 @@ export default class DebateSignUp extends React.Component {
     .then((response) => response.json())
     .then((responseJson) => {
       return responseJson;
-      // TODO redirect to sorted rooms page
+      navigate('Sorted Rooms')
     })
     .catch((error) => {
       console.error(error);

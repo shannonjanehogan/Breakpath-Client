@@ -14,6 +14,7 @@ export default class LogIn extends React.Component {
   }
 
   handleLoginClick(event) {
+    const { navigate } = this.props.navigation;
     event.preventDefault();
     return fetch('https://breakpath-api.herokuapp.com/login', {
       method: 'POST',
@@ -32,6 +33,12 @@ export default class LogIn extends React.Component {
       console.error(error);
     });
   }
+
+  static navigationOptions = {
+    drawer: () => ({
+      title: 'Log In',
+    }),
+  };
 
   render() {
     const { navigate } = this.props.navigation;
