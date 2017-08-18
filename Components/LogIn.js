@@ -26,7 +26,7 @@ export default class LogIn extends React.Component {
     .then((response) => response.json())
     .then((responseJson) => {
       return responseJson;
-      // TODO redirect to debate sign up
+      push(DebateSignUp);
     })
     .catch((error) => {
       console.error(error);

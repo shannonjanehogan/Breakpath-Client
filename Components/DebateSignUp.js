@@ -39,7 +39,7 @@ export default class DebateSignUp extends React.Component {
     .then((response) => response.json())
     .then((responseJson) => {
       return responseJson;
-      // TODO redirect to sorted rooms page
+      push(SortedRooms);
     })
     .catch((error) => {
       console.error(error);
