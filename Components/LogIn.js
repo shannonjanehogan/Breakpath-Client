@@ -1,6 +1,7 @@
 import React from 'react';
 import { AppRegistry, Button, StyleSheet, Text, TextInput, View } from 'react-native';
-import { StackNavigator } from 'react-navigation';
+import { DrawerNavigator } from 'react-navigation';
+import NavigationBar from 'react-native-navbar';
 
 export default class LogIn extends React.Component {
   constructor(props){
@@ -13,6 +14,7 @@ export default class LogIn extends React.Component {
   }
 
   handleLoginClick(event) {
+    const { navigate } = this.props.navigation;
     event.preventDefault();
     return fetch('https://breakpath-api.herokuapp.com/login', {
       method: 'POST',
@@ -25,7 +27,7 @@ export default class LogIn extends React.Component {
     .then((response) => response.json())
     .then((responseJson) => {
       return responseJson;
-      // TODO redirect to debate sign up
+      navigate('Sign up to Debate');
     })
     .catch((error) => {
       console.error(error);
@@ -39,8 +41,27 @@ export default class LogIn extends React.Component {
   };
 
   render() {
+    const { navigate } = this.props.navigation;
+    const leftButtonConfig = {
+      title: 'Sign Up',
+      handler: () => navigate('Sign Up'),
+    };
+    const rightButtonConfig = {
+      title: 'Log In',
+      handler: () => navigate('Log In'),
+    };
+    const titleConfig = {
+      title: 'BreakPath',
+    };
     return (
       <View>
+        <View style={styles.header}>
+          <NavigationBar
+            leftButton={leftButtonConfig}
+            title={titleConfig}
+            rightButton={rightButtonConfig}
+          />
+        </View>
         <View style={{ padding: 10 }}>
           <TextInput
             style={{ height: 40 }}
@@ -67,3 +88,10 @@ export default class LogIn extends React.Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  header: {
+    marginTop: 20,
+    marginBottom: 20,
+  },
+});
