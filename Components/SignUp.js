@@ -17,6 +17,11 @@ export default class SignUp extends React.Component {
     };
     this.handleSignUpClick = this.handleSignUpClick.bind(this);
   }
+  static navigationOptions = {
+    drawer: () => ({
+      title: 'Sign Up',
+    }),
+  };
 
   handleSignUpClick(event) {
     const { navigate } = this.props.navigation;
@@ -43,6 +48,7 @@ export default class SignUp extends React.Component {
   }
 
   render() {
+    const { navigate } = this.props.navigation;
     const skill = [
       { value: 'Novice' },
       { value: 'Pro' },

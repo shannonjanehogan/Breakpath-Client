@@ -27,14 +27,21 @@ export default class LogIn extends React.Component {
     .then((response) => response.json())
     .then((responseJson) => {
       return responseJson;
-      navigate('Debate Sign Up');
+      navigate('Sign up to Debate');
     })
     .catch((error) => {
       console.error(error);
     });
   }
 
+  static navigationOptions = {
+    drawer: () => ({
+      title: 'Log In',
+    }),
+  };
+
   render() {
+    const { navigate } = this.props.navigation;
     const leftButtonConfig = {
       title: 'Sign Up',
       handler: () => navigate('Sign Up'),

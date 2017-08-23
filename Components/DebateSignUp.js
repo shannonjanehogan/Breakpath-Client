@@ -48,6 +48,7 @@ export default class DebateSignUp extends React.Component {
   }
 
   render() {
+    const { navigate } = this.props.navigation;
     const preferences = [
       { value: 'Debate' },
       { value: 'Judge' },
