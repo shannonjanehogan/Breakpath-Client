@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router';
 import { Alert, AppRegistry, Button, StyleSheet, Text, TextInput, View } from 'react-native';
-import { DrawerNavigator } from 'react-navigation';
+import { DrawerNavigator, DrawerView } from 'react-navigation';
 import { Dropdown } from 'react-native-material-dropdown';
 import SignUp from './Components/SignUp.js';
 import LogIn from './Components/LogIn.js'
@@ -15,6 +15,15 @@ const App = DrawerNavigator({
   'Log In': { screen: LogIn },
   'Sign up to Debate': { screen: DebateSignUp },
   'Sorted Rooms': { screen: SortedRooms },
+},
+{
+  drawerWidth: 200,
+  contentOptions: {
+    activeTintColor: '#3498DB',
+    style: {
+      marginTop: 20,
+    }
+  }
 });
 
 // AppRegistry.registerComponent('App', () => App);
