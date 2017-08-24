@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert, AppRegistry, Button, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Alert, AppRegistry, Button, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 import { DrawerNavigator } from 'react-navigation';
 import { Dropdown } from 'react-native-material-dropdown';
 import NavigationBar from 'react-native-navbar';
@@ -9,7 +9,7 @@ export default class HomeScreen extends React.Component {
     super(props);
     this.state = {
       titleText: 'Welcome to BreakPath',
-      bodyText: 'Breakpath was made for debaters by debaters \n\nSign up to debate, and view your place in the draw \n\nPlenty of new features coming soon \n\nCheck out the BreakPath apps for iOS and Android \n\nMade with love for the University of British Columbia Debate Society',
+      bodyText: 'Breakpath was made for debaters by debaters \n\nSign up to debate, and view your place in the draw \n\nPlenty of new features coming soon \n\nCheck out the BreakPath Web App \n\nMade with love for the University of British Columbia Debate Society',
       space: ' ',
     }
   };
@@ -41,41 +41,46 @@ export default class HomeScreen extends React.Component {
             rightButton={rightButtonConfig}
           />
         </View>
-        <Text style={styles.baseText}>
-          <Text style={styles.titleText} onPress={this.onPressTitle}>
-            {this.state.titleText}{'\n'}{'\n'}
+        <ScrollView>
+          <Text style={styles.baseText}>
+            <Text style={styles.titleText} onPress={this.onPressTitle}>
+              {this.state.titleText}{'\n'}{'\n'}
+            </Text>
+            <Text>
+              {this.state.bodyText}
+            </Text>
           </Text>
-          <Text>
-            {this.state.bodyText}
+          <Text style={styles.space}>
+            {this.state.space}
           </Text>
-        </Text>
-        <Text style={styles.space}>
-          {this.state.space}
-        </Text>
-        <Button
-          title="SIGN UP"
-          onPress={() =>
-            navigate('Sign Up')
-          }
-        />
-        <Text style={styles.space}>
-          {this.state.space}
-        </Text>
-        <Button
-          title="LOGIN"
-          onPress={() =>
-            navigate('Log In')
-          }
-        />
-        <Text style={styles.space}>
-          {this.state.space}
-        </Text>
-        <Button
-          title="SIGN UP TO DEBATE"
-          onPress={() =>
-            navigate('Sign up to Debate')
-          }
-        />
+          <Button
+            title="SIGN UP"
+            onPress={() =>
+              navigate('Sign Up')
+            }
+            color='#002154'
+          />
+          <Text style={styles.space}>
+            {this.state.space}
+          </Text>
+          <Button
+            title="LOGIN"
+            onPress={() =>
+              navigate('Log In')
+            }
+            color='#002154'
+          />
+          <Text style={styles.space}>
+            {this.state.space}
+          </Text>
+          <Button
+            title="SIGN UP TO DEBATE"
+            onPress={() =>
+              navigate('Sign up to Debate')
+            }
+            color='#002154'
+          />
+        </ScrollView>
       </View>
     );
   }

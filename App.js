@@ -21,7 +21,7 @@ const App = DrawerNavigator({
   drawerWidth: 200,
   contentComponent: DrawerContent,
   contentOptions: {
-    activeTintColor: '#3498DB',
+    activeTintColor: '#002154',
     style: {
       marginTop: 20,
     },

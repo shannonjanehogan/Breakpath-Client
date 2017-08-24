@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppRegistry, Button, StyleSheet, Text, TextInput, View } from 'react-native';
+import { AppRegistry, Button, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 import { DrawerNavigator } from 'react-navigation';
 import { Dropdown } from 'react-native-material-dropdown';
 import NavigationBar from 'react-native-navbar';
@@ -74,60 +74,92 @@ export default class SignUp extends React.Component {
             rightButton={rightButtonConfig}
           />
         </View>
-        <View style={{ padding: 10 }}>
-          <TextInput
-            style={{ height: 40 }}
-            placeholder="First Name"
-            onChangeText={(newValue) => this.setState({ first_name: newValue })}
+        <ScrollView>
+          <View style={{ padding: 10 }}>
+            <TextInput
+              style={{ height: 40 }}
+              placeholder="First Name"
+              onChangeText={(newValue) => this.setState({ first_name: newValue })}
+              returnKeyType = {"next"}
+              autoFocus = {true}
+              onSubmitEditing={(event) => {
+                this.refs.SecondInput.focus();
+              }}
+            />
+            <Text style={{ padding: 10, fontSize: 42 }}>
+            </Text>
+          </View>
+          <View style={{ padding: 10 }}>
+            <TextInput
+              ref='SecondInput'
+              style={{ height: 40 }}
+              placeholder="Last Name"
+              onChangeText={(newValue) => this.setState({ last_name: newValue })}
+              returnKeyType = {"next"}
+              autoFocus = {true}
+              onSubmitEditing={(event) => {
+                this.refs.ThirdInput.focus();
+              }}
+            />
+            <Text style={{ padding: 10, fontSize: 42 }}>
+            </Text>
+          </View>
+          <View style={{ padding: 10 }}>
+            <TextInput
+              ref='ThirdInput'
+              style={{ height: 40 }}
+              placeholder="Username"
+              onChangeText={(newValue) => this.setState({ username: newValue })}
+              returnKeyType = {"next"}
+              autoFocus = {true}
+              onSubmitEditing={(event) => {
+                this.refs.FourthInput.focus();
+              }}
+            />
+            <Text style={{ padding: 10, fontSize: 42 }}>
+            </Text>
+          </View>
+          <View style={{ padding: 10 }}>
+            <TextInput
+              ref='FourthInput'
+              style={{ height: 40 }}
+              placeholder="Email"
+              onChangeText={(newValue) => this.setState({ email: newValue })}
+              returnKeyType = {"next"}
+              autoFocus = {true}
+              onSubmitEditing={(event) => {
+                this.refs.FifthInput.focus();
+              }}
+            />
+            <Text style={{ padding: 10, fontSize: 42 }}>
+            </Text>
+          </View>
+          <View style={{ padding: 10 }}>
+            <TextInput
+              ref='FifthInput'
+              style={{ height: 40 }}
+              placeholder="Password"
+              onChangeText={(newValue) => this.setState({ password: newValue })}
+              returnKeyType = {"next"}
+              autoFocus = {true}
+              onSubmitEditing={(event) => {
+                this.refs.SixthInput.focus();
+              }}
+            />
+            <Text style={{ padding: 10, fontSize: 42 }}>
+            </Text>
+          </View>
+          <Dropdown
+            ref='SixthInput'
+            label='Skill Level'
+            data={skill}
+            onChangeText={(newValue) => this.setState({ skill_level: newValue })}
           />
-          <Text style={{ padding: 10, fontSize: 42 }}>
-          </Text>
-        </View>
-        <View style={{ padding: 10 }}>
-          <TextInput
-            style={{ height: 40 }}
-            placeholder="Last Name"
-            onChangeText={(newValue) => this.setState({ last_name: newValue })}
+          <Button
+            onPress={this.handleSignUpClick}
+            title="Sign Up"
           />
-          <Text style={{ padding: 10, fontSize: 42 }}>
-          </Text>
-        </View>
-        <View style={{ padding: 10 }}>
-          <TextInput
-            style={{ height: 40 }}
-            placeholder="Username"
-            onChangeText={(newValue) => this.setState({ username: newValue })}
-          />
-          <Text style={{ padding: 10, fontSize: 42 }}>
-          </Text>
-        </View>
-        <View style={{ padding: 10 }}>
-          <TextInput
-            style={{ height: 40 }}
-            placeholder="Email"
-            onChangeText={(newValue) => this.setState({ email: newValue })}
-          />
-          <Text style={{ padding: 10, fontSize: 42 }}>
-          </Text>
-        </View>
-        <Dropdown
-          label='Skill Level'
-          data={skill}
-          onChangeText={(newValue) => this.setState({ skill_level: newValue })}
-        />
-        <View style={{ padding: 10 }}>
-          <TextInput
-            style={{ height: 40 }}
-            placeholder="Password"
-            onChangeText={(newValue) => this.setState({ password: newValue })}
-          />
-          <Text style={{ padding: 10, fontSize: 42 }}>
-          </Text>
-        </View>
-        <Button
-          onPress={this.handleSignUpClick}
-          title="Sign Up"
-        />
+        </ScrollView>
       </View>
     );
   }
