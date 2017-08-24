@@ -40,7 +40,7 @@ export default class DebateSignUp extends React.Component {
     .then((response) => response.json())
     .then((responseJson) => {
       return responseJson;
-      navigate('Sorted Rooms')
+      navigate('Sorted Rooms');
     })
     .catch((error) => {
       console.error(error);

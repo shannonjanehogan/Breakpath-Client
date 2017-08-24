@@ -40,7 +40,7 @@ export default class SignUp extends React.Component {
     .then((response) => response.json())
     .then((responseJson) => {
       return responseJson;
-      navigate('Debate Sign Up')
+      navigate('Sign up to Debate');
     })
     .catch((error) => {
       console.error(error);

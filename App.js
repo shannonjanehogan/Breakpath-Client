@@ -13,7 +13,7 @@ const App = DrawerNavigator({
   'Home Screen': { screen: HomeScreen },
   'Sign Up': { screen: SignUp },
   'Log In': { screen: LogIn },
-  'Debate Sign Up': { screen: DebateSignUp },
+  'Sign up to Debate': { screen: DebateSignUp },
   'Sorted Rooms': { screen: SortedRooms },
 });
 
