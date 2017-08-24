@@ -8,6 +8,7 @@ import LogIn from './Components/LogIn.js'
 import DebateSignUp from './Components/DebateSignUp.js'
 import HomeScreen from './Components/Home.js'
 import SortedRooms from './Components/SortedRooms.js'
+import DrawerContent from './Components/DrawerContent.js'
 
 const App = DrawerNavigator({
   'Home Screen': { screen: HomeScreen },
@@ -18,11 +19,12 @@ const App = DrawerNavigator({
 },
 {
   drawerWidth: 200,
+  contentComponent: DrawerContent,
   contentOptions: {
     activeTintColor: '#3498DB',
     style: {
       marginTop: 20,
-    }
+    },
   }
 });
 
