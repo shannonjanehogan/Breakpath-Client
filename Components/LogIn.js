@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppRegistry, Button, StyleSheet, Text, TextInput, View } from 'react-native';
+import { AppRegistry, Button, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 import { DrawerNavigator } from 'react-navigation';
 import NavigationBar from 'react-native-navbar';
 
@@ -62,28 +62,37 @@ export default class LogIn extends React.Component {
             rightButton={rightButtonConfig}
           />
         </View>
-        <View style={{ padding: 10 }}>
-          <TextInput
-            style={{ height: 40 }}
-            placeholder="Username"
-            onChangeText={(newValue) => this.setState({ username: newValue })}
+        <ScrollView>
+          <View style={{ padding: 10 }}>
+            <TextInput
+              style={{ height: 40 }}
+              placeholder="Username"
+              onChangeText={(newValue) => this.setState({ username: newValue })}
+              returnKeyType = {"next"}
+              autoFocus = {true}
+              onSubmitEditing={(event) => {
+                this.refs.SecondInput.focus();
+              }}
+            />
+            <Text style={{ padding: 10, fontSize: 42 }}>
+            </Text>
+          </View>
+          <View style={{ padding: 10 }}>
+            <TextInput
+              ref='SecondInput'
+              style={{ height: 40 }}
+              placeholder="Password"
+              onChangeText={(newValue) => this.setState({ password: newValue })}
+            />
+            <Text style={{ padding: 10, fontSize: 42 }}>
+            </Text>
+          </View>
+          <Button
+            onPress={this.handleLoginClick}
+            title="Log In"
+            color='#002154'
           />
-          <Text style={{ padding: 10, fontSize: 42 }}>
-          </Text>
-        </View>
-        <View style={{ padding: 10 }}>
-          <TextInput
-            style={{ height: 40 }}
-            placeholder="Password"
-            onChangeText={(newValue) => this.setState({ password: newValue })}
-          />
-          <Text style={{ padding: 10, fontSize: 42 }}>
-          </Text>
-        </View>
-        <Button
-          onPress={this.handleLoginClick}
-          title="Log In"
-        />
+        </ScrollView>
       </View>
     );
   }

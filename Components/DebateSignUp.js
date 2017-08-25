@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert, AppRegistry, Button, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Alert, AppRegistry, Button, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 import { DrawerNavigator } from 'react-navigation';
 import { Dropdown } from 'react-native-material-dropdown';
 import NavigationBar from 'react-native-navbar';
@@ -79,47 +79,62 @@ export default class DebateSignUp extends React.Component {
             rightButton={rightButtonConfig}
           />
         </View>
-        <View style={{ padding: 10 }}>
-          <TextInput
-            style={{ height: 40 }}
-            placeholder="First Name"
-            onChangeText={(newValue) => this.setState({ first_name: newValue })}
+        <ScrollView>
+          <View style={{ padding: 10 }}>
+            <TextInput
+              style={{ height: 40 }}
+              placeholder="First Name"
+              onChangeText={(newValue) => this.setState({ first_name: newValue })}
+              returnKeyType = {"next"}
+              autoFocus = {true}
+              onSubmitEditing={(event) => {
+                this.refs.SecondInput.focus();
+              }}
+            />
+            <Text style={{ padding: 10, fontSize: 42 }}>
+            </Text>
+          </View>
+          <View style={{ padding: 10 }}>
+            <TextInput
+              ref='SecondInput'
+              style={{ height: 40 }}
+              placeholder="Last Name"
+              onChangeText={(newValue) => this.setState({ last_name: newValue })}
+              returnKeyType = {"next"}
+              autoFocus = {true}
+              onSubmitEditing={(event) => {
+                this.refs.ThirdInput.focus();
+              }}
+            />
+            <Text style={{ padding: 10, fontSize: 42 }}>
+            </Text>
+          </View>
+          <View style={{ padding: 10 }}>
+            <TextInput
+              ref='ThirdInput'
+              style={{ height: 40 }}
+              placeholder="Partner Preference"
+              onChangeText={(newValue) => this.setState({ partner_preference: newValue })}
+            />
+            <Text style={{ padding: 10, fontSize: 42 }}>
+            </Text>
+          </View>
+          <Dropdown
+            label='Debate Preference'
+            data={preferences}
+            onChangeText={(newValue) => this.setState({ debate_preference: newValue })}
           />
-          <Text style={{ padding: 10, fontSize: 42 }}>
-          </Text>
-        </View>
-        <View style={{ padding: 10 }}>
-          <TextInput
-            style={{ height: 40 }}
-            placeholder="Last Name"
-            onChangeText={(newValue) => this.setState({ last_name: newValue })}
+          <Dropdown
+            label='Skill Level'
+            data={skill}
+            onChangeText={(newValue) => this.setState({ skill_level: newValue })}
           />
-          <Text style={{ padding: 10, fontSize: 42 }}>
-          </Text>
-        </View>
-        <View style={{ padding: 10 }}>
-          <TextInput
-            style={{ height: 40 }}
-            placeholder="Partner Preference"
-            onChangeText={(newValue) => this.setState({ partner_preference: newValue })}
+          <Button
+            onPress={this.handleDebateSignUpClick}
+            title="Sign up to debate"
+            color='#002154'
           />
-          <Text style={{ padding: 10, fontSize: 42 }}>
-          </Text>
-        </View>
-        <Dropdown
-          label='Debate Preference'
-          data={preferences}
-          onChangeText={(newValue) => this.setState({ debate_preference: newValue })}
-        />
-        <Dropdown
-          label='Skill Level'
-          data={skill}
-          onChangeText={(newValue) => this.setState({ skill_level: newValue })}
-        />
-        <Button
-          onPress={this.handleDebateSignUpClick}
-          title="Sign up to debate"
-        />
+        </ScrollView>
       </View>
     );
   }

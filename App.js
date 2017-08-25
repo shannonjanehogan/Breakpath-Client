@@ -1,13 +1,14 @@
 import React from 'react';
 import { Route, Switch } from 'react-router';
 import { Alert, AppRegistry, Button, StyleSheet, Text, TextInput, View } from 'react-native';
-import { DrawerNavigator } from 'react-navigation';
+import { DrawerNavigator, DrawerView } from 'react-navigation';
 import { Dropdown } from 'react-native-material-dropdown';
 import SignUp from './Components/SignUp.js';
 import LogIn from './Components/LogIn.js'
 import DebateSignUp from './Components/DebateSignUp.js'
 import HomeScreen from './Components/Home.js'
 import SortedRooms from './Components/SortedRooms.js'
+import DrawerContent from './Components/DrawerContent.js'
 
 const App = DrawerNavigator({
   'Home Screen': { screen: HomeScreen },
@@ -15,6 +16,16 @@ const App = DrawerNavigator({
   'Log In': { screen: LogIn },
   'Sign up to Debate': { screen: DebateSignUp },
   'Sorted Rooms': { screen: SortedRooms },
+},
+{
+  drawerWidth: 200,
+  contentComponent: DrawerContent,
+  contentOptions: {
+    activeTintColor: '#002154',
+    style: {
+      marginTop: 20,
+    },
+  }
 });
 
 // AppRegistry.registerComponent('App', () => App);
