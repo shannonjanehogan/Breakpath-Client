@@ -154,10 +154,12 @@ export default class SignUp extends React.Component {
             label='Skill Level'
             data={skill}
             onChangeText={(newValue) => this.setState({ skill_level: newValue })}
+            selectedItemColor='#002154'
           />
           <Button
             onPress={this.handleSignUpClick}
             title="Sign Up"
+            color='#002154'
           />
         </ScrollView>
       </View>

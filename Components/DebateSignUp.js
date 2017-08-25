@@ -132,6 +132,7 @@ export default class DebateSignUp extends React.Component {
           <Button
             onPress={this.handleDebateSignUpClick}
             title="Sign up to debate"
+            color='#002154'
           />
         </ScrollView>
       </View>

@@ -90,6 +90,7 @@ export default class LogIn extends React.Component {
           <Button
             onPress={this.handleLoginClick}
             title="Log In"
+            color='#002154'
           />
         </ScrollView>
       </View>

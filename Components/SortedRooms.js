@@ -10,7 +10,38 @@ export default class IndexSortedRooms extends React.Component {
     super(props);
     this.state = {
       titleText: 'Sorted Rooms',
-    }
+      pro: 'Pro ',
+      nov: 'Nov '
+    };
+    this.state2 = {
+      titleText: 'BUCH B302',
+      baseText: 'ProAm',
+    };
+    this.state3 = {
+      titleText: 'Judges',
+      debater1: 'Dumbledore',
+      debater2: 'Ron',
+    };
+    this.state4 = {
+      titleText: 'OG',
+      debater1: 'Rob',
+      debater2: 'Lupin',
+    };
+    this.state5 = {
+      titleText: 'OO',
+      debater1: 'Snape',
+      debater2: 'Harry',
+    };
+    this.state6 = {
+      titleText: 'CG',
+      debater1: 'Fred',
+      debater2: 'George',
+    };
+    this.state7 = {
+      titleText: 'CO',
+      debater1: 'Hermoine',
+      debater2: 'Lily',
+    };
   };
   static navigationOptions = {
     drawer: () => ({
@@ -31,7 +62,7 @@ export default class IndexSortedRooms extends React.Component {
       title: 'BreakPath',
     };
     return (
-      <View>
+      <ScrollView>
         <View style={styles.header}>
           <NavigationBar
             leftButton={leftButtonConfig}
@@ -39,89 +70,151 @@ export default class IndexSortedRooms extends React.Component {
             rightButton={rightButtonConfig}
           />
         </View>
-        <ScrollView>
-          <Text style={styles.baseText}>
-            <Text style={styles.titleText} onPress={this.onPressTitle}>
-              {this.state.titleText}{'\n'}{'\n'}
-            </Text>
+        <Text style={styles.baseText}>
+          <Text style={styles.titleText} onPress={this.onPressTitle}>
+            {this.state.titleText}{'\n'}{'\n'}
           </Text>
-          <Card>
-            <Card.Body>
-              <Text>
-                BUCH B302
+        </Text>
+        <Card>
+          <Card.Body>
+            <Text style={styles.baseText}>
+              <Text style={styles.titleText} onPress={this.onPressTitle}>
+                {this.state2.titleText}
               </Text>
-              <Text>
-                ProAm
+            </Text>
+            <Text style={styles.baseText}>
+              <Text style={styles.baseText} onPress={this.onPressTitle}>
+                {this.state2.baseText}
               </Text>
-            </Card.Body>
-          </Card>
-          <Card>
-            <Card.Body>
-              <Text>
-                Judges
+            </Text>
+          </Card.Body>
+        </Card>
+        <Card>
+          <Card.Body>
+            <Text style={styles.baseText}>
+              <Text style={styles.titleText} onPress={this.onPressTitle}>
+                {this.state3.titleText}
               </Text>
-              <Text>
-                Pro, Dumbledore
+            </Text>
+            <Text style={styles.baseText}>
+              <Text style={styles.experience} onPress={this.onPressTitle}>
+                {this.state.pro}
               </Text>
-              <Text>
-                Nov, Ron
+              <Text style={styles.baseText} onPress={this.onPressTitle}>
+                {this.state3.debater1}
               </Text>
-            </Card.Body>
-          </Card>
-          <Card>
-            <Card.Body>
-              <Text>
-                OG
+            </Text>
+            <Text style={styles.baseText}>
+              <Text style={styles.experience} onPress={this.onPressTitle}>
+                {this.state.nov}
               </Text>
-              <Text>
-                Pro, Rob
+              <Text style={styles.baseText} onPress={this.onPressTitle}>
+                {this.state3.debater2}
               </Text>
-              <Text>
-                Nov, Lupin
+            </Text>
+          </Card.Body>
+        </Card>
+        <Card>
+          <Card.Body>
+            <Text style={styles.baseText}>
+              <Text style={styles.titleText} onPress={this.onPressTitle}>
+                {this.state4.titleText}
               </Text>
-            </Card.Body>
-          </Card>
-          <Card>
-            <Card.Body>
-              <Text>
-                OO
+            </Text>
+            <Text style={styles.baseText}>
+              <Text style={styles.experience} onPress={this.onPressTitle}>
+                {this.state.nov}
               </Text>
-              <Text>
-                Nov, Snape
+              <Text style={styles.baseText} onPress={this.onPressTitle}>
+                {this.state4.debater1}
               </Text>
-              <Text>
-                Pro, Harry
+            </Text>
+            <Text style={styles.baseText}>
+              <Text style={styles.experience} onPress={this.onPressTitle}>
+                {this.state.pro}
               </Text>
-            </Card.Body>
-          </Card>
-          <Card>
-            <Card.Body>
-              <Text>
-                CG
+              <Text style={styles.baseText} onPress={this.onPressTitle}>
+                {this.state4.debater2}
               </Text>
-              <Text>
-                Nov, Fred
+            </Text>
+          </Card.Body>
+        </Card>
+        <Card>
+          <Card.Body>
+            <Text style={styles.baseText}>
+              <Text style={styles.titleText} onPress={this.onPressTitle}>
+                {this.state5.titleText}
               </Text>
-              <Text>
-                Pro, George
+            </Text>
+            <Text style={styles.baseText}>
+              <Text style={styles.experience} onPress={this.onPressTitle}>
+                {this.state.nov}
               </Text>
-            </Card.Body>
-          </Card>
-          <Card>
-            <Card.Body>
-              <Text>
-                CO
+              <Text style={styles.baseText} onPress={this.onPressTitle}>
+                {this.state5.debater1}
               </Text>
-              <Text>
-                Nov, Hermoine
+            </Text>
+            <Text style={styles.baseText}>
+              <Text style={styles.experience} onPress={this.onPressTitle}>
+                {this.state.pro}
               </Text>
-              <Text>
-               Pro, Lily
+              <Text style={styles.baseText} onPress={this.onPressTitle}>
+                {this.state5.debater2}
               </Text>
-            </Card.Body>
-          </Card>
-        </ScrollView>
-      </View>
+            </Text>
+          </Card.Body>
+        </Card>
+        <Card>
+          <Card.Body>
+            <Text style={styles.baseText}>
+              <Text style={styles.titleText} onPress={this.onPressTitle}>
+                {this.state6.titleText}
+              </Text>
+            </Text>
+            <Text style={styles.baseText}>
+              <Text style={styles.experience} onPress={this.onPressTitle}>
+                {this.state.nov}
+              </Text>
+              <Text style={styles.baseText} onPress={this.onPressTitle}>
+                {this.state6.debater1}
+              </Text>
+            </Text>
+            <Text style={styles.baseText}>
+              <Text style={styles.experience} onPress={this.onPressTitle}>
+                {this.state.pro}
+              </Text>
+              <Text style={styles.baseText} onPress={this.onPressTitle}>
+                {this.state6.debater2}
+              </Text>
+            </Text>
+          </Card.Body>
+        </Card>
+        <Card>
+          <Card.Body>
+            <Text style={styles.baseText}>
+              <Text style={styles.titleText} onPress={this.onPressTitle}>
+                {this.state7.titleText}
+              </Text>
+            </Text>
+            <Text style={styles.baseText}>
+              <Text style={styles.experience} onPress={this.onPressTitle}>
+                {this.state.nov}
+              </Text>
+              <Text style={styles.baseText} onPress={this.onPressTitle}>
+                {this.state7.debater1}
+              </Text>
+            </Text>
+            <Text style={styles.baseText}>
+              <Text style={styles.experience} onPress={this.onPressTitle}>
+                {this.state.pro}
+              </Text>
+              <Text style={styles.baseText} onPress={this.onPressTitle}>
+                {this.state7.debater2}
+              </Text>
+            </Text>
+          </Card.Body>
+        </Card>
+      </ScrollView>
     );
   }
 }
@@ -131,4 +224,15 @@ const styles = StyleSheet.create({
     marginTop: 20,
     marginBottom: 20,
   },
+  baseText: {
+  },
+  titleText: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#002154'
+  },
+  experience: {
+    fontSize: 15,
+    fontWeight: 'bold'
+  }
 });
